@@ -36,12 +36,12 @@ int main(void){
         multMat = multiplyMatASM(xMat, yMat, dim);
         end_t = clock();
         total = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-        printf("temp da mutiplicação em assembly:%lf\n", total);
+        printf("tempo da mutiplicação em assembly em segundos:%lf\n", total);
 	start_t = clock();
         multMat = multiplyMat(xMat, yMat, dim);
         end_t = clock();
         total = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-        printf("temp da mutiplicação em C:%lf\n", total);
+        printf("tempo da mutiplicação em C em segundos:%lf\n", total);
         printf("Salvando o resultado\n");
         writeToFile(multMat, dim);
 	free(matArray);
