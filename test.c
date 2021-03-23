@@ -152,7 +152,7 @@ int** multiplyMat(int** xMat, int** yMat, int dim){
         }
         //multiplying both matrices
         for(int i=0; i<dim; i++){
-                printf("%d ",i);
+                //printf("%d ",i);
                 for(int j=0; j<dim; j++){
                         multMat[i][j] = 0;
                         for(int k=0; k<dim; k++){
