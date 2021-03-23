@@ -31,8 +31,9 @@ int main(void){
         printf("mutiplicando matriz de %d\n",dim);
         clock_t start_t, end_t;
         double total;
-        start_t = clock();
-        int** multMat = multiplyMatASM(xMat, yMat, dim);
+        int** multMat
+	start_t = clock();
+        multMat = multiplyMatASM(xMat, yMat, dim);
         end_t = clock();
         total = (double)(end_t - start_t) / CLOCKS_PER_SEC;
         printf("temp da mutiplicação em assembly:%lf\n", total);
