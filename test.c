@@ -31,7 +31,7 @@ int main(void){
         printf("mutiplicando matriz de %d\n",dim);
         clock_t start_t, end_t;
         double total;
-        int** multMat
+        int** multMat;
 	start_t = clock();
         multMat = multiplyMatASM(xMat, yMat, dim);
         end_t = clock();
