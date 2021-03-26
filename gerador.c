@@ -50,8 +50,8 @@ int* createMatrix(){
     srand(time(NULL));
     for(int i=0; i<dim; i++){
         for(int j=0; j<dim; j++){
-            xMat[i][j] = rand();
-            yMat[i][j] = rand();
+            xMat[i][j] = rand()%100;
+            yMat[i][j] = rand()%100;
         }
     }
     //allocating array to return
