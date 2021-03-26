@@ -13,3 +13,4 @@ run: gerador.c main_final.c
         gcc main_final.c -o main_final -masm=intel
         ./gerador
         ./main_final
+a
