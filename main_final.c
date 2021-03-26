@@ -48,7 +48,6 @@ int** multiplyMatASM(int** xMat, int** yMat, int dim){
         for(int i=0; i<dim; i++) {
                 multMat[i] = (int*) malloc(sizeof(int) * dim);
         }
-        //multiplying both matrices
         int *ly=0,
             *lx=0,
             x=0,
@@ -58,8 +57,9 @@ int** multiplyMatASM(int** xMat, int** yMat, int dim){
             j=0,
             k=0,
             temp=0;
-        printf("entrando no asm\n");
-        __asm__ __volatile__(
+//        printf("entrando no asm\n");
+        //multiplying both matrices
+	__asm__ __volatile__(
         "start_loop_1:\n" // definimos a branch de inicio do
         "       cmp %[i], %[dim]\n" // comparamos o valor de i com dim
         "       jge end_loop1\n" // se i for >= a dim pulamos para o final do loop1
@@ -92,7 +92,7 @@ int** multiplyMatASM(int** xMat, int** yMat, int dim){
         :[rMat] "+r" (multMat), [lx] "+r" (lx), [ly] "+r" (ly), [i] "+r" (i), [j] "+r" (j), [k] "+r" (k), [temp] "+r" (temp),
          [x] "+r" (x), [y] "+r" (y), [r] "+r" (r), [yMat] "+r" (yMat), [xMat] "+r" (xMat), [dim] "+r" (dim)
         );
-        printf("%d %d %d | %d %d | %d\n",i,j,k,lx,ly,temp);
+//        printf("%d %d %d | %d %d | %d\n",i,j,k,lx,ly,temp);
         return multMat;
 }
 
