@@ -56,31 +56,32 @@ int* createMatrix(){
     }
     //allocating array to return
     int* array = malloc(sizeof(int**) * 3);
-    array[0] = xMat;
-    array[1] = yMat;
+    array[0] = (int**) xMat;
+    array[1] = (int**) yMat;
     array[2] = dim;
     return array;
 }
 void writeToFile(int** xMat, int** yMat, int dim){
     FILE *fpointer = fopen("matrices.txt", "w");
     fprintf(fpointer, "%d\n\n", dim);
+    printf("Gerando primeira matriz\n");
     for(int i = 0; i < dim; i++){
         for(int j = 0; j < dim; j++){
           fprintf(fpointer, "%02d ", xMat[i][j]);
         }
         fprintf(fpointer,"\n");
-        printf("%d ",i);
+//        printf("%d ",i);
     }
-    printf("\n\n\n");
+    printf("Gerenado segunda matriz\n");
     fprintf(fpointer,"\n");
     for(int i = 0; i < dim; i++){
         for(int j = 0; j < dim; j++){
             fprintf(fpointer, "%02d ", yMat[i][j]);
         }
         fprintf(fpointer,"\n");
-        printf("%d ",i);
+//        printf("%d ",i);
     }
-    printf("\n\n\n");
+//    printf("\n\n\n");
     fclose(fpointer);
 
     //freeing the arrays
