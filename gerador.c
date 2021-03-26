@@ -56,8 +56,8 @@ int* createMatrix(){
     }
     //allocating array to return
     int* array = malloc(sizeof(int**) * 3);
-    array[0] = (int**) xMat;
-    array[1] = (int**) yMat;
+    array[0] = xMat;
+    array[1] = yMat;
     array[2] = dim;
     return array;
 }
